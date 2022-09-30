@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace RenanIkedaFernandes_d7_avaliacao.Model;
 
 [Table("Users")]
-internal class User
+public class User
 {
     public User()
     {

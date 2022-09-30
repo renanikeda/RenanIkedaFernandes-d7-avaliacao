@@ -21,7 +21,7 @@
                 Grid.Row="0"
                 Content="Autenticação de usuário"/>
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Name="userInput">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto"/>
@@ -34,17 +34,17 @@
                 VerticalAlignment="Top" Margin="60,56,0,0" Grid.Row="0" Content="Usuário"/>
 
             <TextBox Name="UsuarioTextBox" Grid.Row="1" FontSize="10" Grid.Column="1" Margin="60,16,60,0"
-                     FontFamily="Inter" Width="360" Height="60" VerticalContentAlignment="Center" Text="{Binding userInput}" />
+                     FontFamily="Inter" Width="360" Height="60" VerticalContentAlignment="Center" Text="{Binding username}" />
 
             <Label 
                 FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top"
                 FontFamily="Inter" Margin="60,85,0,0" Grid.Row="2" Content="Senha"/>
 
             <TextBox Name="SenhaTextBox" Grid.Row="3" FontSize="10" Grid.Column="1" Margin="60,16,60,0"
-                     FontFamily="Inter" Width="360" Height="60" VerticalContentAlignment="Center" Text="{Binding senhaInput}"/>
+                     FontFamily="Inter" Width="360" Height="60" VerticalContentAlignment="Center" Text="{Binding password}"/>
         </Grid>
 
-        <Button FontFamily="Inter" Grid.Row="3" Content="Acessar" 
+        <Button FontFamily="Inter" Grid.Row="3" Content="Acessar" Click="onLogon"
                 FontSize="16" Height="60" Width="240" Margin="0,0,0,60"/>
     </Grid>
 </Window>

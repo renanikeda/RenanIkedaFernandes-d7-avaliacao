@@ -9,10 +9,10 @@ using RenanIkedaFernandes_d7_avaliacao.Repository;
 using Microsoft.EntityFrameworkCore;
 
 namespace RenanIkedaFernandes_d7_avaliacao.Controller;
-internal class UsersController
+public class UsersController
 {
     private readonly AppDbContext context;
-    private DbSet<User> Users;
+    private DbSet<User>? Users;
     public UsersController(AppDbContext context)
     {
         this.context = context;

@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using RenanIkedaFernandes_d7_avaliacao.Repository;
+using RenanIkedaFernandes_d7_avaliacao.Controller;
+
 
 namespace RenanIkedaFernandes_d7_avaliacao
 {
@@ -20,13 +12,41 @@ namespace RenanIkedaFernandes_d7_avaliacao
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string userInput { get; set; } = String.Empty;
-        private string passwordInput { get; set; } = String.Empty;
-        public MainWindow()
+        private class userCredentials
         {
+            public string username { get; set; } = String.Empty;
+            public string password { get; set; } = String.Empty;
+        }
+        private userCredentials newUserInput = new(); 
+        private readonly UsersController UserController;
+        public MainWindow(AppDbContext context)
+        {
+            this.UserController = new UsersController(context);
             InitializeComponent();
             UsuarioTextBox.Background = new SolidColorBrush(Color.FromRgb(199, 199, 199));
             SenhaTextBox.Background = new SolidColorBrush(Color.FromRgb(199, 199, 199));
+            userInput.DataContext = newUserInput;
+        }
+        private void onLogon(object s, RoutedEventArgs e)
+        {
+            bool login = this.UserController.Logon(this.newUserInput.username, this.newUserInput.password);
+            if (login)
+            {
+                string messageBoxText = "Usuário autenticado! ";
+                string caption = "Sucesso";
+                MessageBoxButton button = MessageBoxButton.OK;
+                MessageBoxImage icon = MessageBoxImage.None;
+                MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+            }
+            else
+            {
+                string messageBoxText = "Credenciais inválidas";
+                string caption = "Error";
+                MessageBoxButton button = MessageBoxButton.OK;
+                MessageBoxImage icon = MessageBoxImage.Warning;
+                MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+            }
+
         }
     }
 }

@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 using RenanIkedaFernandes_d7_avaliacao.Model;
 
 namespace RenanIkedaFernandes_d7_avaliacao.Repository;
-internal class AppDbContext: DbContext
+public class AppDbContext: DbContext
 {
-    public DbSet<User> Users { get; set; }
+    public DbSet<User>? Users { get; set; }
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
         CreatePath($"DB");
