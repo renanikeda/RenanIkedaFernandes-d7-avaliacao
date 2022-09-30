@@ -1,0 +1,50 @@
+﻿<Window x:Class="RenanIkedaFernandes_d7_avaliacao.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RenanIkedaFernandes_d7_avaliacao"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="660" Width="480">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label  FontSize="24"
+                FontWeight="Bold"
+                FontFamily="Inter"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="0,60,0,0"
+                Grid.Row="0"
+                Content="Autenticação de usuário"/>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Label 
+                FontSize="16" FontFamily="Inter" HorizontalAlignment="Left" 
+                VerticalAlignment="Top" Margin="60,56,0,0" Grid.Row="0" Content="Usuário"/>
+
+            <TextBox Name="UsuarioTextBox" Grid.Row="1" FontSize="10" Grid.Column="1" Margin="60,16,60,0"
+                     FontFamily="Inter" Width="360" Height="60" VerticalContentAlignment="Center" Text="{Binding userInput}" />
+
+            <Label 
+                FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top"
+                FontFamily="Inter" Margin="60,85,0,0" Grid.Row="2" Content="Senha"/>
+
+            <TextBox Name="SenhaTextBox" Grid.Row="3" FontSize="10" Grid.Column="1" Margin="60,16,60,0"
+                     FontFamily="Inter" Width="360" Height="60" VerticalContentAlignment="Center" Text="{Binding senhaInput}"/>
+        </Grid>
+
+        <Button FontFamily="Inter" Grid.Row="3" Content="Acessar" 
+                FontSize="16" Height="60" Width="240" Margin="0,0,0,60"/>
+    </Grid>
+</Window>
