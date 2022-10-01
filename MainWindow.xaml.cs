@@ -47,7 +47,8 @@ namespace RenanIkedaFernandes_d7_avaliacao
                 MessageBoxImage icon = MessageBoxImage.Warning;
                 MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
             }
-
+            this.newUserInput = new();
+            userInput.DataContext = this.newUserInput;
         }
     }
 }
