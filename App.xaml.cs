@@ -30,6 +30,7 @@ namespace RenanIkedaFernandes_d7_avaliacao
         private void OnStartup(object s, StartupEventArgs e)
         {
             var mainWindow = serviceProvider.GetService<MainWindow>();
+            mainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             mainWindow.Show();
         }
     }

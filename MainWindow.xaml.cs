@@ -30,6 +30,7 @@ namespace RenanIkedaFernandes_d7_avaliacao
         private void onLogon(object s, RoutedEventArgs e)
         {
             bool login = this.UserController.Logon(this.newUserInput.username, this.newUserInput.password);
+
             if (login)
             {
                 string messageBoxText = "Usuário autenticado! ";
